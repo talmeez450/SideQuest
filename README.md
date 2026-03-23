@@ -12,20 +12,20 @@ Taimur Amir (Roll No. 24L-2518)
 
 ## Tech Stack:
 
-Backend: Node.js, Express.js
-Frontend: React, Vite, Tailwind CSS (v4)
+Backend: Node.js, Express.js  
+Frontend: React, Vite, Tailwind CSS (v4)  
 Database: SQL Server (MSSQL)
 
 ## How to Run:
 
-Database Setup
-Open SQL Server Management Studio (SSMS).
+### Database Setup:
+Open SQL Server Management Studio (SSMS).  
 Execute the scripts found in the [database/] folder to set up the tables.
 
 ### Backend:
 
-cd backend
-npm install
+cd backend  
+npm install  
 npx nodemon server.js
 
 
@@ -33,7 +33,7 @@ npx nodemon server.js
 
 ### Frontend:
 
-cd frontend
-npm install
+cd frontend  
+npm install  
 npm run dev
 
