@@ -6,8 +6,8 @@ SideQuest is a full-stack, RPG-themed web application designed to connect local 
 
 ## Team Members:
 
-Talmeez ur Rehman (Roll No. 24L-2576)
-M. Yaseen Asif (Roll No. 24L-2515)
+Talmeez ur Rehman (Roll No. 24L-2576)  
+M. Yaseen Asif (Roll No. 24L-2515)  
 Taimur Amir (Roll No. 24L-2518)
 
 ## Tech Stack:
