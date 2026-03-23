@@ -1,5 +1,5 @@
--- CREATE DATABASE SideQuestDB;
--- USE SideQuestDB;
+CREATE DATABASE SideQuestDB;
+USE SideQuestDB;
 
 -- 1. Users Table
 CREATE TABLE Users (
