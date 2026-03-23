@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <!-- Deep Midnight Tavern Background Gradient -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#1e1b4b" />
+      <stop offset="100%" stop-color="#020617" />
+    </radialGradient>
+    
+    <!-- Shiny Gold Accent Gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="25%" stop-color="#eab308" />
+      <stop offset="75%" stop-color="#b45309" />
+      <stop offset="100%" stop-color="#78350f" />
+    </linearGradient>
+    
+    <!-- Aged Parchment Gradient -->
+    <linearGradient id="paperGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fffbeb" />
+      <stop offset="50%" stop-color="#fde68a" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Plate -->
+  <rect width="100" height="100" rx="22" fill="url(#bgGrad)" />
+  
+  <!-- Double Ornate Gold Borders -->
+  <rect x="4" y="4" width="92" height="92" rx="18" fill="none" stroke="url(#goldGrad)" stroke-width="3" />
+  <rect x="10" y="10" width="80" height="80" rx="12" fill="none" stroke="url(#goldGrad)" stroke-width="1" opacity="0.6" />
+
+  <!-- Scroll Shadow for Depth -->
+  <path d="M 28 22 C 35 15, 65 15, 72 22 L 72 78 C 65 85, 35 85, 28 78 Z" fill="#000000" opacity="0.5" transform="translate(2, 4)"/>
+  
+  <!-- The Actual Parchment -->
+  <path d="M 28 22 C 35 15, 65 15, 72 22 L 72 78 C 65 85, 35 85, 28 78 Z" fill="url(#paperGrad)" stroke="#92400e" stroke-width="1.5"/>
+
+  <!-- Faint Guild Diamond Imprint on the Scroll -->
+  <polygon points="50,28 65,50 50,72 35,50" fill="#f59e0b" opacity="0.25" />
+  <polygon points="50,31 62,50 50,69 38,50" fill="none" stroke="#b45309" stroke-width="1" opacity="0.3"/>
+
+  <!-- Shiny Golden Scroll Rollers -->
+  <path d="M 20 20 L 80 20" stroke="url(#goldGrad)" stroke-width="8" stroke-linecap="round" />
+  <path d="M 20 80 L 80 80" stroke="url(#goldGrad)" stroke-width="8" stroke-linecap="round" />
+  
+  <!-- Roller End Caps (Jewels) -->
+  <circle cx="20" cy="20" r="4" fill="#fef08a" />
+  <circle cx="80" cy="20" r="4" fill="#fef08a" />
+  <circle cx="20" cy="80" r="4" fill="#fef08a" />
+  <circle cx="80" cy="80" r="4" fill="#fef08a" />
+
+  <!-- The Runic 'S' (Multi-layered for a 3D glow effect) -->
+  <!-- 1. Dark Shadow Base -->
+  <path d="M 60 35 C 50 25, 40 30, 40 40 C 40 50, 60 50, 60 60 C 60 70, 50 75, 40 65" fill="none" stroke="#78350f" stroke-width="9" stroke-linecap="round" transform="translate(1, 2)" />
+  <!-- 2. Thick Gold Body -->
+  <path d="M 60 35 C 50 25, 40 30, 40 40 C 40 50, 60 50, 60 60 C 60 70, 50 75, 40 65" fill="none" stroke="url(#goldGrad)" stroke-width="7" stroke-linecap="round" />
+  <!-- 3. Bright White Highlight Center -->
+  <path d="M 60 35 C 50 25, 40 30, 40 40 C 40 50, 60 50, 60 60 C 60 70, 50 75, 40 65" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" />
+  
+  <!-- Magical Sparkles -->
+  <path d="M 28 32 L 30 28 L 32 32 L 36 34 L 32 36 L 30 40 L 28 36 L 24 34 Z" fill="#fef08a" opacity="0.9"/>
+  <path d="M 72 68 L 73.5 65 L 75 68 L 78 69.5 L 75 71 L 73.5 74 L 72 71 L 69 69.5 Z" fill="#fef08a" opacity="0.9"/>
+</svg>

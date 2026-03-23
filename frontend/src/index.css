@@ -1,0 +1,8 @@
+/* This single line imports all of Tailwind v4's magic! */
+@import "tailwindcss";
+
+/* You can keep any custom global styles below this */
+body {
+    margin: 0;
+    background-color: #f8fafc; /* A nice light slate background to match our theme */
+}
