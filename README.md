@@ -34,6 +34,6 @@ npx nodemon server.js
 ### Frontend:
 
 cd frontend  
-npm install --legacy-peer-deps
-npm run dev  egacy-peer-depsegacy-peer-depsacy-peer-deps
+npm install --legacy-peer-deps  
+npm run dev  
 
