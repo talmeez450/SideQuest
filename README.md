@@ -25,7 +25,7 @@ Execute the scripts found in the [database/] folder to set up the tables.
 ### Backend:
 
 cd backend  
-npm install  
+npm install --legacy-peer-deps  
 npx nodemon server.js
 
 
@@ -34,6 +34,6 @@ npx nodemon server.js
 ### Frontend:
 
 cd frontend  
-npm install  
-npm run dev
+npm install --legacy-peer-deps
+npm run dev  egacy-peer-depsegacy-peer-depsacy-peer-deps
 
