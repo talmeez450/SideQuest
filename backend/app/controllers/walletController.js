@@ -1,7 +1,7 @@
 const { sql } = require('../config/db');
 
-// @desc    Get user's wallet balances and quest-based transaction history
-// @route   GET /api/wallet
+// description:    Get user's wallet balances and quest-based transaction history
+// route:   GET /api/wallet
 exports.getWalletDetails = async (req, res) => {
     try {
         const userId = req.user.id;
