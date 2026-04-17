@@ -14,11 +14,12 @@ connectDB();
 // Import Routes
 const authRoutes = require('./app/routes/authRoutes');
 const questRoutes = require('./app/routes/questRoutes');
+const walletRoutes = require('./app/routes/walletRoutes');
 
 // Mount Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/quests', questRoutes);
-
+app.use('/api/wallet', walletRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
