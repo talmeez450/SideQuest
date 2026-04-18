@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { ShieldCheck, User, Lock, Mail, CreditCard, UserPlus } from 'lucide-react';
+import { CreditCard, Lock, Mail, ShieldCheck, User, UserPlus } from 'lucide-react';
 
 export const Register = () => {
     const [formData, setFormData] = useState({ fullName: '', email: '', password: '', cnic: '' });
