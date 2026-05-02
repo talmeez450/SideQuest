@@ -1,18 +1,17 @@
 const { sql } = require('../config/db');
 
-// description:    Get user's wallet balances and quest-based transaction history
-// route:   GET /api/wallet
+// @desc    Get user's wallet balances and quest-based transaction history
+// @route   GET /api/wallet
+// @access  Private
 exports.getWalletDetails = async (req, res) => {
     try {
         const userId = req.user.id;
 
-        // Get current gold balances
         const userCheck = await sql.query`SELECT WalletBalance, EscrowBalance FROM Users WHERE UserID = ${userId}`;
         if (userCheck.recordset.length === 0) return res.status(404).json({ success: false, message: 'User not found' });
         
         const balances = userCheck.recordset[0];
 
-        // Fetch completed quests where money moved!
         const history = await sql.query`
             SELECT 
                 q.QuestID, 
