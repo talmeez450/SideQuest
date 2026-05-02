@@ -23,14 +23,9 @@ export const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError('');
-        
         const cnicRegex = /^\d{5}-\d{7}-\d{1}$/;
-        if (!cnicRegex.test(formData.cnic)) {
-            return setError('Forged Royal Seal! CNIC must be 13 digits (XXXXX-XXXXXXX-X).');
-        }
-        if (formData.password.length < 6) {
-            return setError('Your Secret Cipher is too weak! Must be at least 6 characters.');
-        }
+        if (!cnicRegex.test(formData.cnic)) return setError('Forged Royal Seal! CNIC must be 13 digits (XXXXX-XXXXXXX-X).');
+        if (formData.password.length < 6) return setError('Your Secret Cipher is too weak! Must be at least 6 characters.');
 
         setIsLoading(true);
         try {
@@ -39,11 +34,8 @@ export const Register = () => {
                 setSuccess(true);
                 setTimeout(() => navigate('/login'), 2500);
             }
-        } catch (err) {
-            setError(err.response?.data?.message || 'The ink spilled. Registration failed.');
-        } finally {
-            setIsLoading(false);
-        }
+        } catch (err) { setError(err.response?.data?.message || 'The ink spilled. Registration failed.'); } 
+        finally { setIsLoading(false); }
     };
 
     if (success) {
@@ -65,11 +57,7 @@ export const Register = () => {
                 <div className="absolute top-2 right-2 w-4 h-4 border-t-2 border-r-2 border-amber-900"></div>
                 <div className="absolute bottom-2 left-2 w-4 h-4 border-b-2 border-l-2 border-amber-900"></div>
                 <div className="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-amber-900"></div>
-                
-                <div className="flex justify-center mb-4 text-amber-900">
-                    <UserPlus size={48} strokeWidth={1.5} />
-                </div>
-                
+                <div className="flex justify-center mb-4 text-amber-900"><UserPlus size={48} strokeWidth={1.5} /></div>
                 <h2 className="text-3xl font-black text-center text-amber-950 mb-2 uppercase tracking-widest">Join the Guild</h2>
                 <p className="text-center text-amber-800/80 mb-8 italic text-sm">Tier 1 KYC requires a royal seal (CNIC) for safe travels.</p>
 
@@ -79,59 +67,32 @@ export const Register = () => {
                     <div>
                         <label className="block text-sm font-bold text-amber-950 mb-1.5 uppercase tracking-wider">Known Title (Full Name)</label>
                         <div className="relative">
-                            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                <User size={18} className="text-amber-800" />
-                            </div>
-                            <input 
-                                type="text" name="fullName" required
-                                className="w-full pl-10 p-3 bg-amber-50 border-2 border-amber-900/40 text-amber-950 focus:bg-[#fdf6e3] focus:ring-0 focus:border-amber-900 transition-colors outline-none font-sans font-medium"
-                                placeholder="Geralt of Rivia" value={formData.fullName} onChange={handleChange}
-                            />
+                            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><User size={18} className="text-amber-800" /></div>
+                            <input type="text" name="fullName" required className="w-full pl-10 p-3 bg-amber-50 border-2 border-amber-900/40 text-amber-950 focus:bg-[#fdf6e3] focus:ring-0 focus:border-amber-900 transition-colors outline-none font-sans font-medium" placeholder="Geralt of Rivia" value={formData.fullName} onChange={handleChange} />
                         </div>
                     </div>
                     <div>
                         <label className="block text-sm font-bold text-amber-950 mb-1.5 uppercase tracking-wider">Courier Pigeon (Email)</label>
                         <div className="relative">
-                            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                <Mail size={18} className="text-amber-800" />
-                            </div>
-                            <input 
-                                type="email" name="email" required
-                                className="w-full pl-10 p-3 bg-amber-50 border-2 border-amber-900/40 text-amber-950 focus:bg-[#fdf6e3] focus:ring-0 focus:border-amber-900 transition-colors outline-none font-sans font-medium"
-                                placeholder="adventurer@sidequest.com" value={formData.email} onChange={handleChange}
-                            />
+                            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><Mail size={18} className="text-amber-800" /></div>
+                            <input type="email" name="email" required className="w-full pl-10 p-3 bg-amber-50 border-2 border-amber-900/40 text-amber-950 focus:bg-[#fdf6e3] focus:ring-0 focus:border-amber-900 transition-colors outline-none font-sans font-medium" placeholder="adventurer@sidequest.com" value={formData.email} onChange={handleChange} />
                         </div>
                     </div>
                     <div>
                         <label className="block text-sm font-bold text-amber-950 mb-1.5 uppercase tracking-wider">Royal Seal (CNIC)</label>
                         <div className="relative">
-                            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                <CreditCard size={18} className="text-amber-800" />
-                            </div>
-                            <input 
-                                type="text" name="cnic" required pattern="\d{5}-\d{7}-\d{1}" maxLength="15"
-                                className="w-full pl-10 p-3 bg-amber-50 border-2 border-amber-900/40 text-amber-950 focus:bg-[#fdf6e3] focus:ring-0 focus:border-amber-900 transition-colors outline-none font-sans font-medium"
-                                placeholder="12345-1234567-1" value={formData.cnic} onChange={handleChange}
-                            />
+                            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><CreditCard size={18} className="text-amber-800" /></div>
+                            <input type="text" name="cnic" required pattern="\d{5}-\d{7}-\d{1}" maxLength="15" className="w-full pl-10 p-3 bg-amber-50 border-2 border-amber-900/40 text-amber-950 focus:bg-[#fdf6e3] focus:ring-0 focus:border-amber-900 transition-colors outline-none font-sans font-medium" placeholder="12345-1234567-1" value={formData.cnic} onChange={handleChange} />
                         </div>
                     </div>
                     <div>
                         <label className="block text-sm font-bold text-amber-950 mb-1.5 uppercase tracking-wider">Secret Cipher (Password)</label>
                         <div className="relative">
-                            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                <Lock size={18} className="text-amber-800" />
-                            </div>
-                            <input 
-                                type="password" name="password" required minLength="6"
-                                className="w-full pl-10 p-3 bg-amber-50 border-2 border-amber-900/40 text-amber-950 focus:bg-[#fdf6e3] focus:ring-0 focus:border-amber-900 transition-colors outline-none font-sans font-medium"
-                                placeholder="••••••••" value={formData.password} onChange={handleChange}
-                            />
+                            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><Lock size={18} className="text-amber-800" /></div>
+                            <input type="password" name="password" required minLength="6" className="w-full pl-10 p-3 bg-amber-50 border-2 border-amber-900/40 text-amber-950 focus:bg-[#fdf6e3] focus:ring-0 focus:border-amber-900 transition-colors outline-none font-sans font-medium" placeholder="••••••••" value={formData.password} onChange={handleChange} />
                         </div>
                     </div>
-                    <button 
-                        type="submit" disabled={isLoading}
-                        className="w-full bg-amber-900 hover:bg-amber-950 text-[#fdf6e3] font-bold py-4 border-2 border-amber-950 shadow-[4px_4px_0px_rgba(69,26,3,1)] hover:shadow-none hover:translate-y-1 hover:translate-x-1 transition-all duration-150 mt-6 flex justify-center items-center uppercase tracking-widest disabled:opacity-70 disabled:cursor-not-allowed"
-                    >
+                    <button type="submit" disabled={isLoading} className="w-full bg-amber-900 hover:bg-amber-950 text-[#fdf6e3] font-bold py-4 border-2 border-amber-950 shadow-[4px_4px_0px_rgba(69,26,3,1)] hover:shadow-none hover:translate-y-1 hover:translate-x-1 transition-all duration-150 mt-6 flex justify-center items-center uppercase tracking-widest disabled:opacity-70 disabled:cursor-not-allowed">
                         {isLoading ? 'Sealing the Oath...' : 'Swear the Oath'}
                     </button>
                 </form>
