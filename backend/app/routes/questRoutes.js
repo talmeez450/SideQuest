@@ -13,7 +13,8 @@ const {
     getMyPostedQuests,
     cancelQuest,
     getQuestById,
-    updateQuest
+    updateQuest,
+    rateUser
 } = require('../controllers/questController');
 const { protect } = require('../middleware/authMiddleware');
 
@@ -47,6 +48,9 @@ router.route('/:id/status')
 
 router.route('/:id/cancel')
     .patch(protect, cancelQuest);
+    
+router.route('/:id/rate')
+    .post(protect, rateUser);
 
 router.route('/:id')
     .get(protect, getQuestById)
