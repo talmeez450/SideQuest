@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Compass, Lock, Mail } from 'lucide-react';
 
-import { AuthContext } from "../context/AuthContext";
+import { AuthContext } from '../context/AuthContext';
 
 export const Login = () => {
     const [email, setEmail] = useState('');
